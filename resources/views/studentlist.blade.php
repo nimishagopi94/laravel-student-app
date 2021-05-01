@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Students</h4>
+                    <h4>Student List</h4>
                 </div>
                 <div class="card-body">
                    
@@ -21,10 +21,11 @@
                         </tr>
                         </thead>
                         <tbody>                           
-                        @if(count($students)>0)                            
+                        @if(count($students)>0)  
+                            @php($sl=1)                          
                             @foreach($students as $student)
                             <tr>
-                                <th scope="row">{{ $student->id }}</th>
+                                <th scope="row">{{ $sl++ }}</th>
                                 <td>{{ $student->name }}</a></td>
                                 <td>{{ $student->age }}</td>
                                 <td>{{ $student->gender }}</td>
@@ -39,9 +40,8 @@
                         @endif
                         </tbody>
                     </table>
-                    <div>
-                        <a href="/create" class="btn btn-success">Create</a>
-                        <a href="/addMark" class="btn btn-success">Add Marks</a>
+                    <div class="float-right">      
+                        <a href="/create" class="btn btn-success">Add Student</a>
                         <a href="/markList" class="btn btn-success">Mark List</a>
                     </div>
                 </div>

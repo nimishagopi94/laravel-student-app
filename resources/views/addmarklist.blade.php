@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("title","Edit Student")
-@section("page-content")
+@section("content")
     <div class="row mt-5">
         <div class="col-lg-12">
             <div class="card">

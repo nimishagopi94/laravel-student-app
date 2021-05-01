@@ -10,14 +10,14 @@ use App\Models\Marks;
 
 class StudentController extends Controller
 {
-    //
-
+    
 	public function insert(Request $request)
 	{
 
 		$rules = [
 			'firstname' => 'required|string|min:3|max:255',			
-			'age' => 'required|numeric|max:150|min:0'
+			'age' => 'required|numeric|max:150|min:0',
+			'teacher' => 'required'
 		];
 		$validator = Validator::make($request->all(),$rules);
 		if ($validator->fails()) {
@@ -46,8 +46,7 @@ class StudentController extends Controller
 	public function studentlist(Request $request)
 	{
 
-
-		$students = Student::with('teacher')->get();
+		$students = Student::with('teacher')->orderBy('name')->get();
 		return view('studentlist', compact('students'));
 	}
 	public function editStudent($id)
@@ -65,7 +64,6 @@ class StudentController extends Controller
 		$student->age = $request->get('age');
 		$student->teacher_id = $request->get('teacher');        
 		$student->save();
-        //
 		return redirect('/studentlist')->with('success', 'Successfully updated!');
 	}
 	public function deleteStudent($id)

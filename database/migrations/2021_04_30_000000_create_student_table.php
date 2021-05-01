@@ -18,7 +18,7 @@ class CreateStudentTable extends Migration
             $table->string('name');
             $table->integer('age');
             $table->enum('gender', array('Male','Female','Others')); 
-            $table->integer('teacher_id')->default(0);   
+            $table->integer('teacher_id')->references('id')->on('teacher');   
             $table->timestamps ();
             $table->softDeletes ();
         });

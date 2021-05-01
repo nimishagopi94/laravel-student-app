@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("title","Add Marks")
-@section("page-content")
+@section("content")
     <div class="row mt-5">
         <div class="col-lg-12">
             <div class="card">
@@ -40,9 +40,7 @@
                         <div class="form-group">
                             <label for="history"> History </label>
                             <input type="text" class="form-control" name="history" id="history" placeholder="Enter Marks">
-                        </div>   
-                                            
-                        
+                        </div>
                 </div>
                 <div class="card-footer">
                     <div class="float-left">

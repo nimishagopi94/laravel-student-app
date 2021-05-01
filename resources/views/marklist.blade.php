@@ -7,10 +7,9 @@
                 <div class="card-header">
                     <h4>Mark List</h4>
                 </div>
-                <div class="card-body">
-                   
+                <div class="card-body">                   
                     <table class="table">
-                        <thead>
+                        <thead class="bg-primary" style="color: white">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
@@ -24,19 +23,20 @@
                         </tr>
                         </thead>
                         <tbody>
+                         @php($sl=1)
                         @if(count($marks)>0) 
                         @foreach($marks as $mark)
-                            <tr>
-                                <th scope="row">{{ $mark->id }}</th>
+                            <tr> 
+                                <th scope="row">{{ $sl++ }}</th>
                                 <td>{{ $mark->student->name }}</a></td>
                                 <td>{{ $mark->maths }}</td>
                                 <td>{{ $mark->science }}</td>
                                 <td>{{ $mark->history }}</td>
                                 <td>{{ $mark->term }}</td>
                                 <td>{{ $mark->maths + $mark->science + $mark->history }} </td>
-                                <td>{{ $mark->created_at }}</td>
-                                <td>{{ $mark->created_at }}</td>
+                                <td>{{ date('M d, Y h:i A',strtotime($mark->created_at)) }}</td>
                                 <td><a href="/editMark/{{ $mark->id }}">Edit</a>/<a href="/deleteMarks/{{ $mark->id }}">Delete</a></td>
+                                
                             </tr>
                         @endforeach                        
                         @else

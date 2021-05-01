@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("title","Edit Marks")
-@section("page-content")
+@section("content")
     <div class="row mt-5">
         <div class="col-lg-12">
             <div class="card">
@@ -41,14 +41,14 @@
                         <div class="form-group">
                             <label for="history"> History </label>
                             <input type="text" value="{{ $marks->history }}"  class="form-control" name="history" id="history" placeholder="Enter Marks">
-                        </div>   
-                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                        </div>
                 </div>
                 <div class="card-footer">
-                    <div class="float-right">
+                    <div class="float-left">
                         <a href="/markList" class="btn btn-primary">Go Back</a>
                     </div>
+                    <button type="submit" class="btn btn-primary btn-save"> Update</button>
+                    </form> 
                 </div>
             </div>
         </div>

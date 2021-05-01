@@ -1,19 +1,17 @@
 @extends("layouts.app")
 @section("title","Edit Student")
-@section("page-content")
+@section("content")
     <div class="row mt-5">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <h3>Edit Student</h3>
                 </div>
-                <div class="card-body">
-                    
+                <div class="card-body">                    
                     <form action="/updateStudent/{{ $student->id }}" method="post">
-                       
                         @csrf
                         <div class="form-group">
-                            <label for="Name">First Name</label>
+                            <label for="Name"> Name </label>
                             <input type="text" class="form-control" value="{{ $student->name }}" name="firstname" id="firstname" placeholder="Enter Name">                            
                         </div>
                         <div class="form-group">
@@ -31,19 +29,17 @@
                         <div class="form-group">
                             <label for="txtPlace">Teacher</label>
                             <select name="teacher" class="form-control" id="teacher">
-                            <option value="">Select Youre Teacher</option>
                             @foreach($teachers as $teacher)
                             <option value="{{ $teacher->id }}" @if( $teacher->id==$student->teacher_id ) selected  @endif >{{ $teacher->name }}</option>                           
                             @endforeach
                             </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <div class="float-right">
+                        </div>                        
+                 <div class="card-footer">
+                    <div class="float-left">
                         <a href="/studentlist" class="btn btn-primary">Go Back</a>
                     </div>
+                    <button type="submit" class="btn btn-primary btn-save"> Update</button>
+                    </form> 
                 </div>
             </div>
         </div>
