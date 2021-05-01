@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("title","Edit Marks")
-@section("page-content")
+@section("content")
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -28,7 +28,7 @@
                                 <td>{{ $student->name }}</a></td>
                                 <td>{{ $student->age }}</td>
                                 <td>{{ $student->gender }}</td>
-                                <td>{{ $student->teacher }}</td>
+                                <td>{{ $student->teacher->name }}</td>
                                 <td><a href="/editStudent/{{ $student->id }}">Edit/<a href="/deleteStudent/{{ $student->id }}">Delete</a></td>
                             </tr>
                             @endforeach

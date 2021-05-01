@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("title","Mark List")
-@section("page-content")
+@section("content")
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -34,6 +34,7 @@
                                 <td>{{ $mark->history }}</td>
                                 <td>{{ $mark->term }}</td>
                                 <td>{{ $mark->maths + $mark->science + $mark->history }} </td>
+                                <td>{{ $mark->created_at }}</td>
                                 <td>{{ $mark->created_at }}</td>
                                 <td><a href="/editMark/{{ $mark->id }}">Edit</a>/<a href="/deleteMarks/{{ $mark->id }}">Delete</a></td>
                             </tr>
