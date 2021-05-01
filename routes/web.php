@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create', function () {
-    return view('creat');
+    return view('create');
 });
 Route::group([ 'middleware' => 'auth'], function () {
 Route::post('/save','App\Http\Controllers\StudentController@insert');
